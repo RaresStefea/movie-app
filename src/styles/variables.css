@@ -1,0 +1,9 @@
+:root {
+    --font-sans: "RobotoVariable", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    --background-color: linear-gradient(to top, #09203f 0%, #537895 100%);
+
+    --text-color: rgba(255, 255, 255, 0.87);
+
+    --fallback-bg-color: --color-bg: #0d1b2a;
+}
