@@ -1,0 +1,7 @@
+.settingsButtonWrapper {}
+
+.icon {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    color: var(--text-color);
+}
