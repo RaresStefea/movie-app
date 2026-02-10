@@ -1,0 +1,25 @@
+.wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    margin: var(--double-half) auto;
+    padding-inline: clamp(var(--half-measure), 3vw, var(--link-pad-x));
+    max-width: min(78rem, 100%);
+}
+
+.grid {
+    display: grid;
+    gap: var(--double-half);
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(22rem, 100%), 1fr));
+
+    justify-content: center;
+}
+
+.grid>* {
+    min-width: 0;
+}
+
+.cell {
+    display: block;
+    min-width: 0;
+}

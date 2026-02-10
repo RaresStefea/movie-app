@@ -1,0 +1,97 @@
+.filterBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--double-half);
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: var(--half-measure);
+    width: 100%;
+}
+
+.itemCard {
+    display: flex;
+    align-items: center;
+    padding: var(--half-measure) var(--link-pad-x);
+    border-radius: var(--radius);
+    background: var(--panel-bg, rgba(255, 255, 255, 0.10));
+    border: 1px solid var(--panel-border, rgba(255, 255, 255, 0.18));
+    box-shadow: 0 0.125rem var(--half-measure) rgba(20, 20, 20, 0.06);
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+    gap: var(--half-measure);
+}
+
+.selectWrap {
+    position: relative;
+    display: inline-block;
+}
+
+.select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 2rem;
+    padding: var(--half-measure) 1.75rem var(--half-measure) var(--link-pad-y);
+    border: 1px solid var(--text-color);
+    border-radius: var(--radius);
+    background: var(--text-color);
+    color: var(--ink);
+    font-size: var(--link-pad-x);
+    line-height: 1;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 0.125rem var(--half-measure) rgba(20, 20, 20, 0.06);
+}
+
+.select:focus {
+    outline: none;
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 0.1875rem rgba(75, 123, 236, 0.25);
+}
+
+.caret {
+    position: absolute;
+    right: var(--half-measure);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: var(--link-pad-x);
+    pointer-events: none;
+}
+
+.badgeLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--double-half);
+    padding: var(--double-half) var(--half-measure);
+    border-radius: var(--radius);
+    background: var(--label-bg, rgba(255, 255, 255, 0.12));
+    color: var(--label-fg, var(--text-color));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: var(--link-pad-x);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+@media (min-width: 48rem) {
+
+    .filterBar {
+        gap: var(--double-half);
+    }
+
+    .select {
+        min-width: 9rem;
+        font-size: var(--link-pad-x);
+        padding: var(--half-measure) 2rem var(--half-measure) var(--link-pad-y);
+    }
+
+    .badgeLabel {
+        font-size: var(--link-pad-x);
+        padding: var(--half-measure) var(--half-measure);
+    }
+}

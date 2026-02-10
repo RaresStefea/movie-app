@@ -1,0 +1,45 @@
+:root {
+
+    /* Global variables */
+
+    --font-sans: "RobotoVariable", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    --background-color: linear-gradient(to top, #09203f 0%, #537895 100%);
+
+    --text-color: rgba(255, 255, 255, 0.87);
+
+    --fallback-bg-color: #0d1b2a;
+
+    /* Nav variables*/
+    --nav-pad: 0.65rem;
+
+    --radius: 0.625rem;
+
+    --link-pad-y: 0.75rem;
+
+    --link-pad-x: 1rem;
+
+    --element-gap: 0.75rem;
+
+    --icon-width: 1.5rem;
+
+    --icon-height: 1.5rem;
+
+    /* Search variables */
+
+    --half-measure: 0.5rem;
+
+    /* Filter variables */
+
+    --muted: #6b7280;
+
+    --ink: #0f172a;
+
+    --double-half: 2.5rem;
+
+    --footer-fg: hsl(0 0% 96%);
+
+    --footer-fg-muted: hsl(0 0% 75%);
+
+    --footer-bg: hsl(0 0% 8%);
+}
