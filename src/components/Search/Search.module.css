@@ -40,7 +40,7 @@
     right: var(--half-measure);
     top: 50%;
     transform: translateY(-50%);
-    height: 2.25rem;
+    height: var(--double-half);
     padding: 0 var(--link-pad-x);
     border: none;
     border-radius: var(--radius);
@@ -74,13 +74,7 @@
     }
 
     .searchButton {
-        height: 2.5rem;
+        height: var(--double-half);
         padding: 0 var(--link-pad-x);
-    }
-}
-
-@media (min-width: 64rem) {
-    .searchWrapper {
-        width: min(70vw, 56rem);
     }
 }

@@ -83,24 +83,10 @@
 
 @media (max-width: 48rem) {
 
-    .nav {
-        padding: 0.625rem 0.75rem;
-    }
-
-    .center {
-        gap: 0.5rem;
-    }
-
+    .nav,
+    .center,
     .link {
-        padding: 0.375rem 0.625rem;
-    }
-}
-
-@media (max-width: 26.25rem) {
-
-    .center {
-        flex-wrap: wrap;
-        row-gap: 0.375rem;
+        padding: var(--half-measure) var(--element-gap);
     }
 }
 

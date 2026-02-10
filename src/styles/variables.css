@@ -36,4 +36,10 @@
     --ink: #0f172a;
 
     --double-half: 2.5rem;
+
+    --footer-fg: hsl(0 0% 96%);
+
+    --footer-fg-muted: hsl(0 0% 75%);
+
+    --footer-bg: hsl(0 0% 8%);
 }

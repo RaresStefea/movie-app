@@ -1,0 +1,25 @@
+.siteFooter {
+    color: var(--footer-fg);
+    background: var(--footer-bg);
+    border-top: 1px solid hsl(0 0% 18%);
+    font-size: var(--link-pad-x);
+}
+
+.siteFooter .footerInner {
+    margin-inline: auto;
+    max-width: min(80rem, 100%);
+    padding: var(--link-pad-y) var(--link-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--link-pad-y);
+    text-align: center;
+}
+
+
+.siteFooter .brand,
+.siteFooter .year {
+    min-width: 0;
+    white-space: nowrap;
+    text-wrap: balance;
+}
