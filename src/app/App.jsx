@@ -1,5 +1,11 @@
 import React from "react";
-import { Navbar, Footer, CardList } from "../components/index.js";
+import {
+  Navbar,
+  Footer,
+  CardList,
+  Search,
+  Filter,
+} from "../components/index.js";
 import styles from "./App.module.css";
 
 export default function App() {
@@ -7,8 +13,11 @@ export default function App() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <CardList title="Example" />
+        <Search />
+        <Filter />
+        <CardList />
       </main>
+      <Footer />
     </>
   );
 }

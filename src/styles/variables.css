@@ -26,4 +26,8 @@
     --icon-width: 1.5rem;
 
     --icon-height: 1.5rem;
+
+    /* Search variables */
+
+    --half-measure: 0.5rem;
 }
