@@ -3,7 +3,7 @@ import style from "./Search.module.css";
 
 export default function Search() {
   return (
-    <section className={style.formWrapper}>
+    <section className={style.formWrapper} araia-label="Searching">
       <form
         className={style.searchWrapper}
         role="search"

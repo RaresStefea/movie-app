@@ -26,7 +26,7 @@
 }
 
 .searchInput::placeholder {
-    color: #8a93a1;
+    color: var(--muted);
 }
 
 .searchInput:focus {
