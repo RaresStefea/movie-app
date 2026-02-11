@@ -1,6 +1,13 @@
 import React from "react";
 import style from "./Card.module.css";
 
+import {
+  formatRating,
+  ariaLabelForCard,
+  isActivationKey,
+  cn,
+} from "../../backend/utils/uiHelper";
+
 export default function Card({
   id,
   title,
@@ -14,7 +21,7 @@ export default function Card({
   const handleCardActivate = () => onClick?.(id);
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
+    if (isActivationKey(e)) {
       e.preventDefault();
       onClick?.(id);
     }
@@ -32,7 +39,7 @@ export default function Card({
       tabIndex={0}
       onClick={handleCardActivate}
       onKeyDown={handleKeyDown}
-      aria-label={`${title}, ${genre}, rating ${rating}`}
+      aria-label={ariaLabelForCard({ title, genre, rating })}
     >
       <div className={style.thumbWrapper}>
         <img
@@ -40,8 +47,9 @@ export default function Card({
           src={image}
           alt={`${title} poster`}
           loading="lazy"
+          draggable={false}
         />
-        <span className={style.ratingBadge}>{Number(rating).toFixed(1)}</span>
+        <span className={style.ratingBadge}>{formatRating(rating)}</span>
       </div>
 
       <div className={style.meta}>
@@ -52,7 +60,7 @@ export default function Card({
         <div className={style.actions}>
           <button
             type="button"
-            className={`${style.watchBtn} ${inWatchlist ? style.active : ""}`}
+            className={cn(style.watchBtn, inWatchlist && style.active)}
             onClick={handleAddToWatchlist}
             aria-pressed={inWatchlist}
             aria-label={

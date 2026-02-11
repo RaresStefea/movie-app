@@ -1,7 +1,25 @@
 import React from "react";
 import style from "./Filter.module.css";
 
-export default function Filter() {
+export default function Filter({
+  genre = "",
+  minRating = "",
+  onGenreChange,
+  onMinRatingChange,
+  genres = [
+    "action",
+    "adventure",
+    "animation",
+    "comedy",
+    "drama",
+    "fantasy",
+    "horror",
+    "mystery",
+    "romance",
+    "scifi",
+    "thriller",
+  ],
+}) {
   return (
     <div className={style.filterBar} aria-label="Filters">
       <div className={style.itemCard}>
@@ -10,21 +28,18 @@ export default function Filter() {
             Genre
           </label>
           <div className={style.selectWrap}>
-            <select id="genre" className={style.select} defaultValue="">
-              <option value="" disabled>
-                Choose…
-              </option>
-              <option value="action">Action</option>
-              <option value="adventure">Adventure</option>
-              <option value="animation">Animation</option>
-              <option value="comedy">Comedy</option>
-              <option value="drama">Drama</option>
-              <option value="fantasy">Fantasy</option>
-              <option value="horror">Horror</option>
-              <option value="mystery">Mystery</option>
-              <option value="romance">Romance</option>
-              <option value="sci-fi">SciFi</option>
-              <option value="thriller">Thriller</option>
+            <select
+              id="genre"
+              className={style.select}
+              value={genre}
+              onChange={(e) => onGenreChange?.(e.target.value)}
+            >
+              <option value="">Choose…</option>
+              {genres.map((g) => (
+                <option key={g} value={g}>
+                  {toTitleCase(g)}
+                </option>
+              ))}
             </select>
             <span className={style.caret} aria-hidden>
               ▾
@@ -39,10 +54,16 @@ export default function Filter() {
             Rating
           </label>
           <div className={style.selectWrap}>
-            <select id="rating" className={style.select} defaultValue="">
-              <option value="" disabled>
-                Choose…
-              </option>
+            <select
+              id="rating"
+              className={style.select}
+              value={minRating}
+              onChange={(e) => {
+                const v = e.target.value;
+                onMinRatingChange?.(v === "" ? "" : Number(v));
+              }}
+            >
+              <option value="">Choose…</option>
               <option value="9">9+ ★</option>
               <option value="8">8+ ★</option>
               <option value="7">7+ ★</option>
@@ -57,4 +78,8 @@ export default function Filter() {
       </div>
     </div>
   );
+}
+
+function toTitleCase(s) {
+  return s.replace(/\w\S*/g, (t) => t[0].toUpperCase() + t.slice(1));
 }

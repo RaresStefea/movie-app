@@ -1,4 +1,8 @@
 .siteFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     color: var(--footer-fg);
     background: var(--footer-bg);
     border-top: 1px solid hsl(0 0% 18%);
