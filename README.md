@@ -20,9 +20,9 @@ Webview
 
 - ~~create MVP design~~
 
-- main search of a movie
+- ~~main search of a movie~~
 
-- Filter by name in search input, filter by genre
+- ~~Filter by name in search input, filter by genre~~
 
 - Sort by rating or alphabetically
 
