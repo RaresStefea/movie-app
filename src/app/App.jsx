@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Footer,
-  CardList,
-  Search,
-  Filter,
-} from "../components/index.js";
+import { Navbar, Footer, MoviesContainer } from "../components";
 import styles from "./App.module.css";
 
 export default function App() {
@@ -13,9 +7,7 @@ export default function App() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <Search />
-        <Filter />
-        <CardList />
+        <MoviesContainer />
       </main>
       <Footer />
     </>

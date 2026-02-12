@@ -1,5 +1,13 @@
 # MOVIER
 
+## UI
+
+- Web view of the app
+  ![Web view](./misc/pc-view.png)
+
+- Mobile view of the app
+  ![Mobile view](./misc/mobile-view.png)
+
 ## Wireframe
 
 Webview
@@ -8,13 +16,13 @@ Webview
 
 ## TODOS
 
-- create wireframe
+- ~~create wireframe~~
 
-- create MVP design
+- ~~create MVP design~~
 
-- main search of a movie
+- ~~main search of a movie~~
 
-- Filter by name in search input, filter by genre
+- ~~Filter by name in search input, filter by genre~~
 
 - Sort by rating or alphabetically
 

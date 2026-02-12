@@ -1,13 +1,19 @@
 import React from "react";
 import style from "./Search.module.css";
+import { useState } from "react";
 
-export default function Search() {
+export default function Search({ defaultValue = "", onSubmit }) {
+  const [text, setText] = useState(defaultValue);
+
   return (
-    <section className={style.formWrapper} araia-label="Searching">
+    <section className={style.formWrapper} aria-label="Searching">
       <form
         className={style.searchWrapper}
         role="search"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit?.(text.trim());
+        }}
       >
         <label htmlFor="site-search" className="sr-only">
           Search
@@ -17,6 +23,10 @@ export default function Search() {
           type="text"
           placeholder="Search…"
           className={style.searchInput}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          aria-label="Search movies"
+          autoComplete="off"
         />
         <button
           type="submit"
