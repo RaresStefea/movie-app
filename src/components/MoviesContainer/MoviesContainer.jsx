@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useOutletContext } from "react-router";
 import Search from "../Search/Search";
 import Filter from "../Filter/Filter";
 import CardList from "../CardList/CardList";
 import { useMovies } from "../../backend/hooks/movies.js";
 
 export default function MoviesContainer() {
+  const { watchlist, onAddToWatchlist } = useOutletContext();
   const [genre, setGenre] = useState("");
   const [minRating, setMinRating] = useState("");
   const [search, setSearch] = useState("");
@@ -17,7 +19,7 @@ export default function MoviesContainer() {
     }
   };
 
-  const { items, status } = useMovies({
+  const { items = [], status } = useMovies({
     query: search,
     genre: genre || "All",
     minRating: minRating === "" ? undefined : Number(minRating),
@@ -26,7 +28,7 @@ export default function MoviesContainer() {
   });
 
   return (
-    <section style={{ display: "grid", gap: 12 }}>
+    <section>
       <Search defaultValue="" onSubmit={handleSearchSubmit} />
 
       <Filter
@@ -40,8 +42,8 @@ export default function MoviesContainer() {
         items={items}
         status={status}
         onCardClick={(id) => console.log("open movie", id)}
-        onAddToWatchlist={() => {}}
-        inWatchlist={() => false}
+        onAddToWatchlist={onAddToWatchlist}
+        inWatchlist={(id) => watchlist.has(id)}
       />
     </section>
   );

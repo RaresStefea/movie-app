@@ -1,0 +1,39 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: var(--double-half) var(--icon-height);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    animation: fadeIn 0.4s ease-out;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+
+    padding-bottom: var(--half-measure);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.section p {
+    font-size: var(--link-pad-x);
+    color: var(--text-color);
+    margin-top: var(--half-measure);
+}
+
+.section>p {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    text-align: center;
+    color: #bbbbbb;
+    font-size: var(--link-pad-x);
+}
+
+.cardListWrapper {
+    animation: fadeInUp 0.35s ease;
+}

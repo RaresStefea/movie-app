@@ -1,9 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router";
 import styles from "./Navbar.module.css";
 import Logo from "../Logo";
 import SettingsIcon from "../SettingsIcon";
 
 export default function Navbar() {
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+  const isWatchlist = location.pathname.startsWith("/watchlist");
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Primary">
@@ -15,12 +21,21 @@ export default function Navbar() {
 
         <ul className={styles.center}>
           <li>
-            <a href="/" className={styles.link} data-active="true">
+            <a
+              href="/"
+              className={styles.link}
+              data-active={isHome ? "true" : "false"}
+            >
               Home
             </a>
           </li>
+
           <li>
-            <a href="/watchlist" className={styles.link}>
+            <a
+              href="/watchlist"
+              className={styles.link}
+              data-active={isWatchlist ? "true" : "false"}
+            >
               Watchlist
             </a>
           </li>
