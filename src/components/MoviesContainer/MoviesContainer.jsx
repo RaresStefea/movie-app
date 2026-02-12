@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Search from "../components/Search/Search";
-import Filter from "../components/Filter/Filter";
-import CardList from "../components/CardList/CardList";
-import { useMovies } from "../backend/hooks/movies";
+import Search from "../Search/Search";
+import Filter from "../Filter/Filter";
+import CardList from "../CardList/CardList";
+import { useMovies } from "../../backend/hooks/movies.js";
 
 export default function MoviesContainer() {
   const [genre, setGenre] = useState("");

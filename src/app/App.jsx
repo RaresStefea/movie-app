@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Footer } from "../components";
-import MoviesContainer from "../backend/index";
+import { Navbar, Footer, MoviesContainer } from "../components";
 import styles from "./App.module.css";
 
 export default function App() {
