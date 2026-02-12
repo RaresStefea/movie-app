@@ -28,4 +28,4 @@ Webview
 
 - Show more details in a modal when clicking on a movie card
 
-- two pages: Home and Watchlist.
+- ~~two pages: Home and Watchlist.~~
