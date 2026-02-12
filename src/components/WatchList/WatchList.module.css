@@ -1,0 +1,43 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: var(--double-half) var(--icon-height);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+
+    padding-bottom: var(--half-measure);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.title h1 {
+    box-shadow: 1.2px 2.4px 2.4px hsl(0deg 0% 0% / 0.46);
+}
+
+.section p {
+    font-size: var(--link-pad-x);
+    color: var(--text-color);
+    margin-top: var(--half-measure);
+}
+
+.section>p {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    text-align: center;
+    color: #bbbbbb;
+    font-size: var(--link-pad-x);
+}
+
+.cardListWrapper {
+    animation: fadeInUp 0.35s ease;
+}

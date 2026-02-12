@@ -8,6 +8,7 @@ export default function CardList({
   onCardClick,
   onAddToWatchlist,
   inWatchlist = () => false,
+  renderItem,
   errorMessage = "",
 }) {
   if (status === "loading") {
@@ -34,7 +35,16 @@ export default function CardList({
     <section className={style.wrapper}>
       <div className={style.grid} role="list">
         {items.map((item) => {
+          if (renderItem) {
+            return (
+              <div role="listitem" key={item.id} className={style.cell}>
+                {renderItem(item)}
+              </div>
+            );
+          }
+
           const img = `/dataset/images/${item.image}`;
+
           return (
             <div role="listitem" key={item.id} className={style.cell}>
               <Card
