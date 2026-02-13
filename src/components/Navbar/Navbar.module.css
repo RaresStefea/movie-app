@@ -13,7 +13,6 @@
 }
 
 .nav {
-    max-width: 955;
     margin: 0 auto;
     padding: var(--nav-pad);
 
@@ -54,6 +53,7 @@
 }
 
 .link {
+    display: inline-block;
     color: inherit;
     text-decoration: none;
     padding: var(--link-pad-y) var(--link-pad-x);
