@@ -14,7 +14,19 @@ Webview
 
 ![Web app desktop view](./misc/Main.png)
 
+## TRELLO LINK
+
+[Access this link for the trello kanban board.](https://trello.com/invite/b/698adb44baebfd8422bca173/ATTI7e1f321850aa54f30c44470009bf3b59189CD25E/movie-app)
+
 ## TODOS
+
+- each individual movie should be accessible through url directly using the movie individual (ex: movies/344)
+
+- a filtered movie list should be accessible through url directly using query paremeters (ex: movies?search=Avengers&order=asc)
+
+- use a nested route to keep the header and navigation bar "static" and use a child route for the page content
+
+- ~~show active state for the navigation links~~
 
 - ~~create wireframe~~
 
