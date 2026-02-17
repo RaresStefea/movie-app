@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { WatchList, MoviesContainer } from "./components";
+import { WatchList, MoviesContainer, FocusedMovie } from "./components";
 import App from "./app/App";
 import "./styles/index.css";
 
@@ -12,11 +12,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MoviesContainer />,
+        Component: MoviesContainer,
       },
       {
         path: "watchlist",
-        element: <WatchList />,
+        Component: WatchList,
+      },
+      {
+        path: "movie/:id",
+        Component: FocusedMovie,
       },
     ],
   },
