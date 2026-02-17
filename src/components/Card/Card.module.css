@@ -22,7 +22,9 @@
 .thumbWrapper {
     position: relative;
     width: 100%;
+    aspect-ratio: 2 / 2;
     background: #1b2735;
+    overflow: hidden;
 }
 
 .thumb {
