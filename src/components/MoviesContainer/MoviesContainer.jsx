@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { useOutletContext, useNavigate } from "react-router";
+import React from "react";
+import { useOutletContext } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import Search from "../Search/Search";
 import Filter from "../Filter/Filter";
 import CardList from "../CardList/CardList";
 import { useMovies } from "../../backend/hooks/movies.js";
 
 export default function MoviesContainer() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
   let watchlist = new Set();
@@ -21,21 +23,38 @@ export default function MoviesContainer() {
     throw new Error(e);
   }
 
-  const [genre, setGenre] = useState("");
-  const [minRating, setMinRating] = useState("");
-  const [search, setSearch] = useState("");
+  const q = searchParams.get("name") || "";
+  const genre = searchParams.get("genre") || "";
+  const minRating = searchParams.get("rate") || "";
 
-  const handleSearchSubmit = (q) => {
-    setSearch(q);
-    if (q === "") {
-      setGenre("");
-      setMinRating("");
+  const updateParams = (partial, options = { replace: false }) => {
+    const next = new URLSearchParams(searchParams);
+    Object.entries(partial).forEach(([k, v]) => {
+      if (v === "" || v == null) next.delete(k);
+      else next.set(k, String(v));
+    });
+    setSearchParams(next, options);
+  };
+
+  const handleSearchSubmit = (nextQ) => {
+    if (nextQ === "") {
+      updateParams({ q: "", genre: "", minRating: "" });
+    } else {
+      updateParams({ q: nextQ });
     }
   };
 
+  const handleGenreChange = (g) => {
+    updateParams({ genre: g });
+  };
+
+  const handleMinRatingChange = (r) => {
+    updateParams({ minRating: r });
+  };
+
   const { items = [], status } = useMovies({
-    query: search,
-    genre: genre || "All",
+    query: q,
+    genre: genre && genre !== "" ? genre : "All",
     minRating: minRating === "" ? undefined : Number(minRating),
     sortBy: "title",
     sortDir: "asc",
@@ -43,13 +62,12 @@ export default function MoviesContainer() {
 
   return (
     <section>
-      <Search defaultValue="" onSubmit={handleSearchSubmit} />
-
+      <Search defaultValue={q} onSubmit={handleSearchSubmit} />
       <Filter
         genre={genre}
         minRating={minRating}
-        onGenreChange={setGenre}
-        onMinRatingChange={setMinRating}
+        onGenreChange={handleGenreChange}
+        onMinRatingChange={handleMinRatingChange}
       />
 
       <CardList
