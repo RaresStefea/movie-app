@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Search.module.css";
-import { useState } from "react";
 
 export default function Search({ defaultValue = "", onSubmit }) {
   const [text, setText] = useState(defaultValue);
+
+  useEffect(() => {
+    setText(defaultValue);
+  }, [defaultValue]);
 
   return (
     <section className={style.formWrapper} aria-label="Searching">
