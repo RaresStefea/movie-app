@@ -18,7 +18,7 @@ export default function App() {
   );
 
   return (
-    <>
+    <div className={styles.app}>
       <Navbar />
       <main className={styles.main}>
         <Outlet context={outletContext} />
@@ -31,6 +31,6 @@ export default function App() {
         )}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
