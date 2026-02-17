@@ -5,3 +5,4 @@ export { default as CardList } from "./CardList";
 export { default as Footer } from "./Footer";
 export { default as MoviesContainer } from "./MoviesContainer";
 export { default as WatchList } from "./WatchList";
+export { default as FocusedMovie } from "./FocusedMovie";

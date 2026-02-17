@@ -8,13 +8,28 @@
 - Mobile view of the app
   ![Mobile view](./misc/mobile-view.png)
 
+- Card modal for more information
+  ![Card modal](./misc/card-modal.png)
+
 ## Wireframe
 
 Webview
 
 ![Web app desktop view](./misc/Main.png)
 
+## TRELLO LINK
+
+[Access this link for the trello kanban board.](https://trello.com/invite/b/698adb44baebfd8422bca173/ATTI7e1f321850aa54f30c44470009bf3b59189CD25E/movie-app)
+
 ## TODOS
+
+- ~~each individual movie should be accessible through url directly using the movie individual (ex: movies/344)~~
+
+- a filtered movie list should be accessible through url directly using query paremeters (ex: movies?search=Avengers&order=asc)
+
+- ~~use a nested route to keep the header and navigation bar "static" and use a child route for the page content~~
+
+- ~~show active state for the navigation links~~
 
 - ~~create wireframe~~
 
@@ -26,6 +41,6 @@ Webview
 
 - ~~Sort by rating or alphabetically~~
 
-- Show more details in a modal when clicking on a movie card
+- ~~Show more details in a modal when clicking on a movie card~~
 
 - ~~two pages: Home and Watchlist.~~
