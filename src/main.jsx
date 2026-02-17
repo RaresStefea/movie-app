@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "movie/:id",
-        Component: FocusedMovie,
+        Component: MoviesContainer,
       },
     ],
   },

@@ -1,39 +1,34 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router";
+import { Outlet } from "react-router";
 import { createPortal } from "react-dom";
 import { Navbar, Footer } from "../components";
 import FocusedMovie from "../components/FocusedMovie";
-import MoviesContainer from "../components/MoviesContainer";
 import styles from "./App.module.css";
 import { useWatchlist } from "../backend/hooks/localstorage.js";
 
 export default function App() {
   const { watchlistSet, toggleWatchlist } = useWatchlist();
-  const location = useLocation();
-  const isMovieModal = location.pathname.startsWith("/movie/");
 
-  const outletContext = {
-    watchlist: watchlistSet,
-    onAddToWatchlist: toggleWatchlist,
-  };
+  const outletContext = React.useMemo(
+    () => ({
+      watchlist: watchlistSet,
+      onAddToWatchlist: toggleWatchlist,
+    }),
+    [watchlistSet, toggleWatchlist],
+  );
 
   return (
     <>
       <Navbar />
       <main className={styles.main}>
-        {isMovieModal ? (
-          <MoviesContainer />
-        ) : (
-          <Outlet context={outletContext} />
+        <Outlet context={outletContext} />
+        {createPortal(
+          <FocusedMovie
+            watchlist={watchlistSet}
+            onAddToWatchlist={toggleWatchlist}
+          />,
+          document.body,
         )}
-        {isMovieModal &&
-          createPortal(
-            <FocusedMovie
-              watchlist={watchlistSet}
-              onAddToWatchlist={toggleWatchlist}
-            />,
-            document.body,
-          )}
       </main>
       <Footer />
     </>

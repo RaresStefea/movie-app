@@ -4,7 +4,7 @@ import style from "./FocusedMovie.module.css";
 import Card from "../Card";
 import { useMovies } from "../../backend/hooks/movies.js";
 
-export default function FocusedMovie({
+export default React.memo(function FocusedMovie({
   watchlist = new Set(),
   onAddToWatchlist = () => {},
 }) {
@@ -44,4 +44,4 @@ export default function FocusedMovie({
       </div>
     </div>
   );
-}
+});

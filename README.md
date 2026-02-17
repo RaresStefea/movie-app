@@ -8,6 +8,9 @@
 - Mobile view of the app
   ![Mobile view](./misc/mobile-view.png)
 
+- Card modal for more information
+  ![Card modal](./misc/card-modal.png)
+
 ## Wireframe
 
 Webview
@@ -20,11 +23,11 @@ Webview
 
 ## TODOS
 
-- each individual movie should be accessible through url directly using the movie individual (ex: movies/344)
+- ~~each individual movie should be accessible through url directly using the movie individual (ex: movies/344)~~
 
 - a filtered movie list should be accessible through url directly using query paremeters (ex: movies?search=Avengers&order=asc)
 
-- use a nested route to keep the header and navigation bar "static" and use a child route for the page content
+- ~~use a nested route to keep the header and navigation bar "static" and use a child route for the page content~~
 
 - ~~show active state for the navigation links~~
 
@@ -38,6 +41,6 @@ Webview
 
 - ~~Sort by rating or alphabetically~~
 
-- Show more details in a modal when clicking on a movie card
+- ~~Show more details in a modal when clicking on a movie card~~
 
 - ~~two pages: Home and Watchlist.~~
