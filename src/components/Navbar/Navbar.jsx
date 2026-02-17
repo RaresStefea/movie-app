@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router";
+import { Link, useLocation, NavLink } from "react-router";
 import styles from "./Navbar.module.css";
 import Logo from "../Logo";
 import SettingsIcon from "../SettingsIcon";
@@ -14,37 +14,37 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Primary">
         <div className={styles.left}>
-          <a href="/" aria-label="Home" className={styles.link}>
+          <NavLink to="/" aria-label="Home" className={styles.link}>
             <Logo />
-          </a>
+          </NavLink>
         </div>
 
         <ul className={styles.center}>
           <li>
-            <a
-              href="/"
+            <NavLink
+              to="/"
               className={styles.link}
               data-active={isHome ? "true" : "false"}
             >
               Home
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
-              href="/watchlist"
+            <NavLink
+              to="/watchlist"
               className={styles.link}
               data-active={isWatchlist ? "true" : "false"}
             >
               Watchlist
-            </a>
+            </NavLink>
           </li>
         </ul>
 
         <div className={styles.right}>
-          <a href="/" aria-label="settings" className={styles.link}>
+          <NavLink to="/" aria-label="settings" className={styles.link}>
             <SettingsIcon />
-          </a>
+          </NavLink>
         </div>
       </nav>
     </header>
