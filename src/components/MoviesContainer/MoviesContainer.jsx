@@ -1,6 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router";
-import { useNavigate, useSearchParams } from "react-router";
+import { useOutletContext, useNavigate, useSearchParams } from "react-router";
 import Search from "../Search/Search";
 import Filter from "../Filter/Filter";
 import CardList from "../CardList/CardList";
@@ -25,7 +24,7 @@ export default function MoviesContainer() {
 
   const q = searchParams.get("name") || "";
   const genre = searchParams.get("genre") || "";
-  const minRating = searchParams.get("rate") || "";
+  const minRating = searchParams.get("rating") || "";
 
   const updateParams = (partial, options = { replace: false }) => {
     const next = new URLSearchParams(searchParams);
@@ -38,9 +37,9 @@ export default function MoviesContainer() {
 
   const handleSearchSubmit = (nextQ) => {
     if (nextQ === "") {
-      updateParams({ q: "", genre: "", minRating: "" });
+      updateParams({ name: "", genre: "", rating: "" });
     } else {
-      updateParams({ q: nextQ });
+      updateParams({ name: nextQ });
     }
   };
 
@@ -49,7 +48,7 @@ export default function MoviesContainer() {
   };
 
   const handleMinRatingChange = (r) => {
-    updateParams({ minRating: r });
+    updateParams({ rating: r });
   };
 
   const { items = [], status } = useMovies({
