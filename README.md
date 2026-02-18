@@ -25,7 +25,7 @@ Webview
 
 - ~~each individual movie should be accessible through url directly using the movie individual (ex: movies/344)~~
 
-- a filtered movie list should be accessible through url directly using query paremeters (ex: movies?search=Avengers&order=asc)
+- ~~a filtered movie list should be accessible through url directly using query paremeters (ex: movies?search=Avengers&order=asc)~~
 
 - ~~use a nested route to keep the header and navigation bar "static" and use a child route for the page content~~
 
