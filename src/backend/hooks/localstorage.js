@@ -8,6 +8,7 @@ export function useWatchlist() {
       const raw = localStorage.getItem(WATCHLIST_KEY);
       return raw ? JSON.parse(raw) : [];
     } catch {
+      localStorage.removeItem(WATCHLIST_KEY);
       return [];
     }
   });
@@ -16,7 +17,8 @@ export function useWatchlist() {
     try {
       localStorage.setItem(WATCHLIST_KEY, JSON.stringify(watchlistIds));
     } catch {
-      throw new Error();
+      localStorage.removeItem(WATCHLIST_KEY);
+      setWatchlistIds([]);
     }
   }, [watchlistIds]);
 

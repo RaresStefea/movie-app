@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useParams } from "react-router";
 import { createPortal } from "react-dom";
 import { Navbar, Footer } from "../components";
 import FocusedMovie from "../components/FocusedMovie";
@@ -8,6 +8,7 @@ import { useWatchlist } from "../backend/hooks/localstorage.js";
 
 export default function App() {
   const { watchlistSet, toggleWatchlist } = useWatchlist();
+  const { id } = useParams();
 
   const outletContext = React.useMemo(
     () => ({
@@ -22,13 +23,14 @@ export default function App() {
       <Navbar />
       <main className={styles.main}>
         <Outlet context={outletContext} />
-        {createPortal(
-          <FocusedMovie
-            watchlist={watchlistSet}
-            onAddToWatchlist={toggleWatchlist}
-          />,
-          document.body,
-        )}
+        {id &&
+          createPortal(
+            <FocusedMovie
+              watchlist={watchlistSet}
+              onAddToWatchlist={toggleWatchlist}
+            />,
+            document.body,
+          )}
       </main>
       <Footer />
     </div>

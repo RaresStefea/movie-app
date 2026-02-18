@@ -44,3 +44,11 @@ Webview
 - ~~Show more details in a modal when clicking on a movie card~~
 
 - ~~two pages: Home and Watchlist.~~
+
+- checking for localstorage items, to be the ids 100% in case someone changes it we have to clear the local storage
+
+## sfaturi
+
+- tagul title pentru tool tip la butoane
+- elementele in prim plan(imagini nu ar trebui sa isi dea resize, trebuie sa ramane la fel)
+- pot sa opresc elemente sa nu depaseasca mai mult de 2 randuri pun ... , dau hover peste el si zice titlull in tooltip
