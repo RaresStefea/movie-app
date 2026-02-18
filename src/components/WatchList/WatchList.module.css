@@ -5,7 +5,6 @@
     padding: var(--double-half) var(--icon-height);
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
     animation: fadeIn 0.4s ease-out;
 }
 
@@ -13,7 +12,7 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-color);
-
+    text-align: center;
     padding-bottom: var(--half-measure);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
