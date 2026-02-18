@@ -6,3 +6,4 @@ export { default as Footer } from "./Footer";
 export { default as MoviesContainer } from "./MoviesContainer";
 export { default as WatchList } from "./WatchList";
 export { default as FocusedMovie } from "./FocusedMovie";
+export { default as PageNotFound } from "./PageNotFound";
